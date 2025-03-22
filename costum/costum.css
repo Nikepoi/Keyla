@@ -18,7 +18,20 @@
     font-size: 1.5em;
     color: white; /* Putih untuk ikon */
     cursor: pointer;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Lebar ikon */
+    height: 40px; /* Tinggi ikon */
+    background: #ff69b4; /* Pink cerah untuk background */
+    border: 2px solid white; /* Garis luar putih */
+    border-radius: 50%; /* Membuat ikon berbentuk lingkaran */
+    transition: background 0.3s ease;
+}
+
+/* Hover Effect for Hamburger Icon */
+.menu-toggle:hover {
+    background: #ff1493; /* Pink lebih gelap saat hover */
 }
 
 /* Menu Items */
@@ -34,6 +47,8 @@
     padding: 0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 8px 8px;
+    overflow: hidden; /* Supaya rapi */
+    animation: slideDown 0.3s ease-in-out; /* Animasi dropdown */
 }
 
 /* Menu Items List */
@@ -47,9 +62,11 @@
     display: block;
     padding: 1em;
     text-align: center;
+    font-family: Arial, sans-serif;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Hover Effect */
+/* Hover Effect for Menu Items */
 .menu-items li a:hover {
     background: #ffc0cb; /* Pink muda saat hover */
     color: white; /* Teks putih saat hover */
@@ -58,4 +75,16 @@
 /* Active Menu */
 .menu-items.active {
     display: flex;
+}
+
+/* Animasi Dropdown */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
