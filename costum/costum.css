@@ -4,54 +4,58 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: #333;
+    background: #ffc0cb; /* Pink muda */
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Hamburger Icon */
 .menu-toggle {
-    display: flex;
-    align-items: center;
+    font-size: 1.5em;
+    color: white; /* Putih untuk ikon */
     cursor: pointer;
+    display: block;
 }
 
-.menu-icon {
-    width: 24px;
-    height: 24px;
-}
-
+/* Menu Items */
 .menu-items {
     list-style: none;
     display: none;
     flex-direction: column;
-    background: #444;
+    background: #ffffff; /* Putih untuk dropdown menu */
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     padding: 0;
-    margin: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 8px 8px;
 }
 
+/* Menu Items List */
 .menu-items li {
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid #ffc0cb; /* Garis pemisah pink muda */
 }
 
 .menu-items li a {
-    color: white;
+    color: #ff69b4; /* Pink cerah untuk teks */
     text-decoration: none;
     display: block;
     padding: 1em;
+    text-align: center;
 }
 
+/* Hover Effect */
 .menu-items li a:hover {
-    background: #555;
+    background: #ffc0cb; /* Pink muda saat hover */
+    color: white; /* Teks putih saat hover */
 }
 
+/* Active Menu */
 .menu-items.active {
     display: flex;
 }
