@@ -1,1 +1,52 @@
+/* Menu Styles */
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
 
+.menu-toggle {
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+    display: block;
+}
+
+.menu-items {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.menu-items li {
+    border-bottom: 1px solid #555;
+}
+
+.menu-items li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+}
+
+.menu-items li a:hover {
+    background: #555;
+}
+
+.menu-items.active {
+    display: flex;
+}
