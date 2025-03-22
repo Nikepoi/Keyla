@@ -14,10 +14,14 @@
 }
 
 .menu-toggle {
-    font-size: 1.5em;
-    color: white;
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    display: block;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
 }
 
 .menu-items {
@@ -30,6 +34,7 @@
     left: 0;
     width: 100%;
     padding: 0;
+    margin: 0;
 }
 
 .menu-items li {
