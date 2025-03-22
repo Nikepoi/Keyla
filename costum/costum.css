@@ -13,23 +13,20 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Hamburger Icon */
 .menu-toggle {
-    font-size: 1.8em;
-    color: #ffffff; /* Putih untuk ikon */
+    font-size: 1.5em;
+    color: white; /* Warna ikon */
     cursor: pointer;
-    display: block;
     background: none;
     border: none;
     outline: none;
 }
 
-/* Menu Items */
 .menu-items {
     list-style: none;
     display: none;
     flex-direction: column;
-    background: #ffffff; /* Putih untuk dropdown menu */
+    background: #ffffff; /* Putih untuk dropdown */
     position: absolute;
     top: 100%;
     left: 0;
@@ -40,23 +37,43 @@
     border-radius: 0 0 8px 8px;
 }
 
+.menu-items.active {
+    display: flex;
+}
+
 .menu-items li {
-    border-bottom: 1px solid #ffc0cb; /* Garis pemisah pink muda */
+    border-bottom: 1px solid #ffc0cb;
 }
 
 .menu-items li a {
-    color: #ff69b4; /* Pink cerah untuk teks */
+    color: #ff69b4; /* Pink cerah */
     text-decoration: none;
-    display: block;
     padding: 1em;
     text-align: center;
+    display: block;
 }
 
 .menu-items li a:hover {
-    background: #ffc0cb; /* Pink muda saat hover */
-    color: white; /* Teks putih saat hover */
+    background: #ffc0cb;
+    color: white;
 }
 
-.menu-items.active {
-    display: flex;
+/* Responsive Design */
+@media (min-width: 768px) {
+    .menu-items {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .menu-items li {
+        border: none;
+    }
+
+    .menu-items li a {
+        padding: 0.5em 1em;
+    }
 }
