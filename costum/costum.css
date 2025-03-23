@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
+    padding: 1em 2em;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -20,13 +20,15 @@
     background: none;
     border: none;
     outline: none;
+    display: flex;
+    align-items: center;
 }
 
 .menu-items {
     list-style: none;
-    display: none;
+    display: none; /* Awal disembunyikan */
     flex-direction: column;
-    background: #ffffff; /* Putih untuk dropdown */
+    background: #ffffff; /* Warna dropdown menu */
     position: absolute;
     top: 100%;
     left: 0;
@@ -42,7 +44,11 @@
 }
 
 .menu-items li {
-    border-bottom: 1px solid #ffc0cb;
+    border-bottom: 1px solid #ffc0cb; /* Garis bawah untuk tiap item */
+}
+
+.menu-items li:last-child {
+    border-bottom: none; /* Hapus garis bawah pada item terakhir */
 }
 
 .menu-items li a {
@@ -51,29 +57,36 @@
     padding: 1em;
     text-align: center;
     display: block;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .menu-items li a:hover {
-    background: #ffc0cb;
-    color: white;
+    background: #ffc0cb; /* Warna hover pink muda */
+    color: white; /* Warna teks saat hover */
 }
 
 /* Responsive Design */
 @media (min-width: 768px) {
+    .menu-toggle {
+        display: none; /* Sembunyikan toggle di layar besar */
+    }
+
     .menu-items {
-        display: flex !important;
-        position: static;
-        flex-direction: row;
-        background: none;
-        box-shadow: none;
-        border-radius: 0;
+        display: flex !important; /* Tampilkan menu di layar besar */
+        position: static; /* Reset posisi */
+        flex-direction: row; /* Tata horizontal */
+        background: none; /* Hapus background */
+        box-shadow: none; /* Hapus bayangan */
+        border-radius: 0; /* Reset border radius */
     }
 
     .menu-items li {
-        border: none;
+        border: none; /* Hapus garis bawah pada item */
     }
 
     .menu-items li a {
-        padding: 0.5em 1em;
+        padding: 0.5em 1em; /* Padding lebih kecil untuk layar besar */
     }
 }
