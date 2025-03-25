@@ -1,0 +1,58 @@
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.download-container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 100%;
+    margin: 20px auto;
+    border: 1px solid #000000; /* Border hitam */
+}
+
+/* Lebar menyesuaikan untuk desktop */
+@media (min-width: 1024px) {
+    .download-container {
+        width: 80%;
+        max-width: 1200px;
+    }
+}
+
+.download-button {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #800080; /* Ungu */
+    border: 1px solid #800080;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.download-button:hover {
+    background-color: #6a006a;
+    color: #ffffff;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
