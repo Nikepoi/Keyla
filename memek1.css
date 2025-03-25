@@ -1,0 +1,66 @@
+body {
+    background-color: #f0f0f0; /* Latar belakang abu-abu muda */
+    color: #333; /* Warna teks gelap */
+    font-family: Arial, sans-serif;
+}
+
+.download-container {
+    text-align: center;
+    background-color: #ffffff; /* Latar belakang putih untuk kontainer */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Lebar kontainer di desktop lebih besar */
+    max-width: 600px; /* Maksimal lebar kontainer 600px */
+    margin: 20px auto;
+    border: 1px solid #000000; /* Border hitam di sekitar kontainer */
+}
+
+.download-button {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: normal;
+    color: #ffffff; /* Teks tombol putih */
+    text-decoration: none;
+    background-color: #800080; /* Latar belakang tombol ungu */
+    border: 1px solid #800080; /* Border tombol ungu */
+    border-radius: 5px;
+    margin: 8px 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.download-button:hover {
+    background-color: #6a006a; /* Warna ungu lebih gelap saat hover */
+    color: #ffffff; /* Teks tetap putih saat hover */
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #800080; /* Judul warna ungu */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.section {
+    margin-top: 15px;
+}
+
+/* Untuk layar lebih besar (desktop) */
+@media (min-width: 768px) {
+    .download-container {
+        width: 50%; /* Lebar kontainer lebih besar di desktop */
+        max-width: 1000px; /* Maksimal lebar kontainer menjadi 1000px */
+    }
+  }
