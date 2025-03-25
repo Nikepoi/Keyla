@@ -1,12 +1,12 @@
 body {
-    background-color: #FCE4EC; /* Pink muda */
-    color: #4A4A4A; /* Abu-abu gelap untuk teks agar tetap terbaca */
+    background-color: #f0f0f0;
+    color: #333;
     font-family: Arial, sans-serif;
 }
 
 .download-container {
     text-align: center;
-    background-color: #FFFFFF; /* Putih agar kontras */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
@@ -21,18 +21,18 @@ body {
     padding: 12px 0;
     font-size: 16px;
     font-weight: normal;
-    color: #D81B60; /* Pink tua untuk teks */
+    color: #0088cc;
     text-decoration: none;
-    background-color: #FFCDD2; /* Pink pastel */
-    border: 1px solid #D81B60; /* Border pink tua */
+    background-color: #f8f8f8;
+    border: 1px solid #0088cc;
     border-radius: 5px;
     margin: 8px 0;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .download-button:hover {
-    background-color: #D81B60; /* Pink tua saat hover */
-    color: #FFFFFF; /* Teks putih saat hover */
+    background-color: #0088cc;
+    color: #ffffff;
 }
 
 .image-container {
