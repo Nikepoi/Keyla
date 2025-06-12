@@ -3,6 +3,7 @@
 
 /* Body */
 body {
+    background: #f0f0f0; /* Fallback */
     background: linear-gradient(135deg, #f0f0f0, #e0e0e0); /* Gradient lembut */
     color: #333;
     font-family: 'Roboto', Arial, sans-serif; /* Font modern */
@@ -22,14 +23,21 @@ body {
     max-width: 100%;
     margin: 20px auto;
     border: 1px solid #000000; /* Border hitam */
-    animation: fadeIn 0.5s ease-in; /* Animasi fade-in (Fitur a) */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Efek visual (Fitur g) */
+    animation: fadeIn 0.5s ease-in; /* Animasi fade-in */
+    -webkit-transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Fallback */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Efek visual */
 }
 
-/* Animasi fade-in (Fitur a) */
+/* Animasi fade-in */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Efek hover container */
+.download-container:hover {
+    border-color: #FFC1CC; /* Pink muda saat hover */
+    box-shadow: 0 0 10px rgba(255, 193, 204, 0.5); /* Glow pink muda */
 }
 
 /* Responsif untuk desktop */
@@ -37,7 +45,28 @@ body {
     .download-container {
         width: 80%;
         max-width: 1200px;
+        padding: 30px;
     }
+    .separator img {
+        max-width: 50%; /* Gambar lebih kecil di desktop */
+        margin: 0 auto;
+    }
+    .download-button {
+        width: 50%; /* Tombol lebih pendek */
+        display: inline-block; /* Biar bisa sejajar kalau mau */
+        margin: 10px auto;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    li {
+        width: 60%; /* Lebar li disesuaikan */
+        margin: 15px 0; /* Jarak antar tombol lebih longgar */
+    }
+    h3 { font-size: 2.2rem; }
+    h4 { font-size: 1.6rem; }
 }
 
 /* Responsif untuk mobile */
@@ -48,9 +77,19 @@ body {
     }
 }
 
-/* Dark mode support (Fitur b) */
+/* Responsif untuk layar super kecil */
+@media (max-width: 480px) {
+    .download-container {
+        padding: 10px;
+    }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.2rem; }
+}
+
+/* Dark mode support */
 @media (prefers-color-scheme: dark) {
     body {
+        background: #333; /* Fallback */
         background: linear-gradient(135deg, #333, #444);
         color: #ddd;
     }
@@ -60,13 +99,44 @@ body {
         box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
     }
     .download-button {
-        background-color: #78C678;
+        background-color: #FF99AA; /* Pink lebih gelap di dark mode */
         border: 1px solid #000000;
         color: #fff;
     }
     .download-button:hover {
-        background-color: #66A866;
+        background-color: #FF7799; /* Pink lebih gelap saat hover */
     }
+}
+
+/* Styling untuk separator (gambar) */
+.separator {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.separator img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background: #ddd; /* Placeholder */
+    -webkit-transition: transform 0.3s ease; /* Fallback */
+    transition: transform 0.3s ease;
+}
+
+.separator img:hover {
+    transform: scale(1.03); /* Efek hover */
+    filter: grayscale(20%); /* Efek tambahan */
+}
+
+/* Styling untuk daftar download */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+li {
+    margin: 10px 0;
 }
 
 /* Tombol download */
@@ -76,18 +146,19 @@ body {
     padding: 14px 0;
     font-size: 16px;
     font-weight: bold;
-    color: #222; /* Teks gelap untuk kontras (Fitur f) */
+    color: #222; /* Teks gelap untuk kontras */
     text-decoration: none;
-    background-color: #90EE90; /* Hijau muda */
+    background-color: #FFC1CC; /* Pink muda */
     border: 1px solid #000000; /* Border hitam */
     border-radius: 5px;
     margin: 10px 0;
     position: relative;
-    -webkit-transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Fallback (Fitur h) */
+    cursor: pointer; /* Interaksi tambahan */
+    -webkit-transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Fallback */
     transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Ikon CTA di tombol (Fitur d) */
+/* Ikon CTA di tombol */
 .download-button::after {
     content: '↓';
     margin-left: 8px;
@@ -95,47 +166,39 @@ body {
 }
 
 .download-button:hover {
-    background-color: #78C678; /* Hijau lebih gelap */
-    transform: scale(1.02); /* Efek hover */
+    background-color: #FF99AA; /* Pink lebih gelap saat hover */
+    transform: scale(1.02);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .download-button:focus {
-    outline: 2px solid #90EE90;
-    outline-offset: 2px; /* Aksesibilitas (Fitur f) */
+    outline: 2px solid #FFC1CC; /* Outline pink muda */
+    outline-offset: 2px; /* Aksesibilitas */
 }
 
-/* Gambar */
-.image-container {
-    text-align: center;
-    margin-bottom: 15px;
+/* Efek ripple saat klik tombol */
+.download-button:active::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 0.6s linear;
 }
 
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    background: #ddd; /* Placeholder (Fitur e) */
-    -webkit-transition: transform 0.3s ease; /* Fallback (Fitur h) */
-    transition: transform 0.3s ease;
+@keyframes ripple {
+    to { transform: translate(-50%, -50%) scale(4); opacity: 0; }
 }
 
-.image-container img:hover {
-    transform: scale(1.03); /* Efek hover */
-}
-
-/* Efek visual tambahan saat hover container (Fitur g) */
-.download-container:hover {
-    border-color: #90EE90;
-    box-shadow: 0 0 10px rgba(144, 238, 144, 0.5);
-}
-
-/* Tipografi untuk heading (Fitur c) */
-h1, h2, h3 {
+/* Tipografi untuk heading */
+h1, h2, h3, h4 {
     font-family: 'Roboto', Arial, sans-serif;
     font-weight: 700;
     color: #333;
 }
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.2rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.4rem; }
