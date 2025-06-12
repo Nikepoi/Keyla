@@ -1,0 +1,141 @@
+/* Import Google Fonts untuk Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Body */
+body {
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0); /* Gradient lembut */
+    color: #333;
+    font-family: 'Roboto', Arial, sans-serif; /* Font modern */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Tipografi lebih readable */
+}
+
+/* Container utama */
+.download-container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    width: 95%;
+    max-width: 100%;
+    margin: 20px auto;
+    border: 1px solid #000000; /* Border hitam */
+    animation: fadeIn 0.5s ease-in; /* Animasi fade-in (Fitur a) */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Efek visual (Fitur g) */
+}
+
+/* Animasi fade-in (Fitur a) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsif untuk desktop */
+@media (min-width: 1024px) {
+    .download-container {
+        width: 80%;
+        max-width: 1200px;
+    }
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    .download-container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+}
+
+/* Dark mode support (Fitur b) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #333, #444);
+        color: #ddd;
+    }
+    .download-container {
+        background-color: #444;
+        border: 1px solid #000000;
+        box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+    }
+    .download-button {
+        background-color: #78C678;
+        border: 1px solid #000000;
+        color: #fff;
+    }
+    .download-button:hover {
+        background-color: #66A866;
+    }
+}
+
+/* Tombol download */
+.download-button {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #222; /* Teks gelap untuk kontras (Fitur f) */
+    text-decoration: none;
+    background-color: #90EE90; /* Hijau muda */
+    border: 1px solid #000000; /* Border hitam */
+    border-radius: 5px;
+    margin: 10px 0;
+    position: relative;
+    -webkit-transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Fallback (Fitur h) */
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Ikon CTA di tombol (Fitur d) */
+.download-button::after {
+    content: '↓';
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.download-button:hover {
+    background-color: #78C678; /* Hijau lebih gelap */
+    transform: scale(1.02); /* Efek hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.download-button:focus {
+    outline: 2px solid #90EE90;
+    outline-offset: 2px; /* Aksesibilitas (Fitur f) */
+}
+
+/* Gambar */
+.image-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background: #ddd; /* Placeholder (Fitur e) */
+    -webkit-transition: transform 0.3s ease; /* Fallback (Fitur h) */
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.03); /* Efek hover */
+}
+
+/* Efek visual tambahan saat hover container (Fitur g) */
+.download-container:hover {
+    border-color: #90EE90;
+    box-shadow: 0 0 10px rgba(144, 238, 144, 0.5);
+}
+
+/* Tipografi untuk heading (Fitur c) */
+h1, h2, h3 {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 700;
+    color: #333;
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
